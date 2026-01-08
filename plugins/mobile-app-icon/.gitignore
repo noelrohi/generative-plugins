@@ -1,2 +1,5 @@
 # API keys - never commit
 config.json
+
+# Generated icons
+generated/

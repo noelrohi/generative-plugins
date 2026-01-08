@@ -21,6 +21,7 @@ BACKGROUND="auto"
 OUTPUT="icon.png"
 PROMPT=""
 ASPECT_RATIO="1:1"
+OUTPUT_DIR="$PLUGIN_DIR/generated"
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -100,6 +101,9 @@ build_prompt() {
 
 FINAL_PROMPT=$(build_prompt "$PROMPT" "$SIZE" "$STYLE" "$RAW")
 
+# Ensure output directory exists
+mkdir -p "$OUTPUT_DIR"
+
 generate_openai() {
     local api_key=$(jq -r '.openai_api_key' "$CONFIG_FILE")
     if [[ -z "$api_key" || "$api_key" == "null" ]]; then
@@ -160,11 +164,11 @@ generate_openai() {
 
         local outfile
         if [[ "$count" -eq 1 ]]; then
-            outfile="$OUTPUT"
+            outfile="$OUTPUT_DIR/$OUTPUT"
         else
             local ext="${OUTPUT##*.}"
             local base="${OUTPUT%.*}"
-            outfile="${base}_$((i + 1)).${ext}"
+            outfile="$OUTPUT_DIR/${base}_$((i + 1)).${ext}"
         fi
 
         echo "$b64" | base64 -d > "$outfile"
@@ -218,8 +222,9 @@ generate_gemini() {
         exit 1
     fi
 
-    echo "$img_data" | base64 -d > "$OUTPUT"
-    echo "Saved: $OUTPUT"
+    local outfile="$OUTPUT_DIR/$OUTPUT"
+    echo "$img_data" | base64 -d > "$outfile"
+    echo "Saved: $outfile"
 }
 
 case $MODEL in

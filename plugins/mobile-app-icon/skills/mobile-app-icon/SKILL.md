@@ -89,4 +89,4 @@ ${CLAUDE_PLUGIN_ROOT}/scripts/generate.sh "a music note" --model gemini --aspect
 ${CLAUDE_PLUGIN_ROOT}/scripts/generate.sh "watercolor sunset" --raw
 ```
 
-Output is saved to current working directory.
+Output is saved to `${CLAUDE_PLUGIN_ROOT}/generated/`.
