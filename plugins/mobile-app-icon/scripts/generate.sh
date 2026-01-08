@@ -179,8 +179,8 @@ generate_gemini() {
         exit 1
     fi
 
-    local gemini_model="gemini-2.0-flash-preview-image-generation"
-    [[ "$MODEL" == "gemini-pro" ]] && gemini_model="gemini-2.0-flash-preview-image-generation"
+    local gemini_model="gemini-3-pro-image-preview"
+    [[ "$MODEL" == "gemini-flash" ]] && gemini_model="gemini-2.0-flash-preview-image-generation"
 
     local request_json=$(jq -n \
         --arg prompt "$FINAL_PROMPT" \
@@ -225,11 +225,11 @@ generate_gemini() {
 case $MODEL in
     gpt-image-1|dall-e-3|dall-e-2)
         generate_openai ;;
-    gemini|gemini-pro|gemini-flash)
+    gemini|gemini-flash)
         generate_gemini ;;
     *)
         echo "Unknown model: $MODEL"
-        echo "Supported: gpt-image-1, dall-e-3, dall-e-2, gemini, gemini-pro, gemini-flash"
+        echo "Supported: gpt-image-1, dall-e-3, dall-e-2, gemini, gemini-flash"
         exit 1 ;;
 esac
 
