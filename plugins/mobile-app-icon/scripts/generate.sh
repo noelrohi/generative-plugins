@@ -180,7 +180,7 @@ generate_gemini() {
     fi
 
     local gemini_model="gemini-3-pro-image-preview"
-    [[ "$MODEL" == "gemini-flash" ]] && gemini_model="gemini-2.0-flash-preview-image-generation"
+    [[ "$MODEL" == "gemini-flash" ]] && gemini_model="gemini-2.5-flash-image"
 
     local request_json=$(jq -n \
         --arg prompt "$FINAL_PROMPT" \

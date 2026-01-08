@@ -32,7 +32,7 @@ ${CLAUDE_PLUGIN_ROOT}/scripts/generate.sh "PROMPT" [OPTIONS]
 
 | Option | Values | Default |
 |--------|--------|---------|
-| `--model` | OpenAI: `gpt-image-1`, `dall-e-3`, `dall-e-2`. Gemini: `gemini` (Gemini 3 Pro), `gemini-flash` (Gemini 2 Flash) | `gpt-image-1` |
+| `--model` | OpenAI: `gpt-image-1`, `dall-e-3`, `dall-e-2`. Gemini: `gemini` (Gemini 3 Pro), `gemini-flash` (Gemini 2.5 Flash) | `gpt-image-1` |
 | `--size` | OpenAI only (see sizes below) | `1024x1024` |
 | `--aspect-ratio` | Gemini only: `1:1`, `16:9`, `9:16`, `4:3`, `3:4` | `1:1` |
 | `--quality` | `auto`, `high`, `medium`, `low`, `hd`, `standard` | `auto` |
