@@ -1,9 +1,12 @@
 #!/bin/bash
 set -e
 
-# Use CLAUDE_PLUGIN_ROOT for portable paths
+# Plugin code location (from CLAUDE_PLUGIN_ROOT or fallback)
 PLUGIN_DIR="${CLAUDE_PLUGIN_ROOT:-$HOME/.claude/plugins/mobile-app-icon}"
-CONFIG_FILE="$PLUGIN_DIR/config.json"
+
+# User config stored at fixed path (persists across plugin updates)
+CONFIG_DIR="$HOME/.claude/plugins/mobile-app-icon"
+CONFIG_FILE="$CONFIG_DIR/config.json"
 
 if [[ ! -f "$CONFIG_FILE" ]]; then
     echo "ERROR: Config not found at $CONFIG_FILE"
@@ -21,7 +24,7 @@ BACKGROUND="auto"
 OUTPUT="icon.png"
 PROMPT=""
 ASPECT_RATIO="1:1"
-OUTPUT_DIR="$PLUGIN_DIR/generated"
+OUTPUT_DIR="$CONFIG_DIR/generated"
 
 while [[ $# -gt 0 ]]; do
     case $1 in

@@ -10,7 +10,7 @@ Generate professional app icons using OpenAI or Gemini image generation APIs.
 
 ## Configuration
 
-Check if `${CLAUDE_PLUGIN_ROOT}/config.json` exists.
+Check if `~/.claude/plugins/mobile-app-icon/config.json` exists (user config is stored at this fixed path, not in the plugin cache).
 
 If missing, tell the user:
 > Create `~/.claude/plugins/mobile-app-icon/config.json` with:
@@ -89,4 +89,4 @@ ${CLAUDE_PLUGIN_ROOT}/scripts/generate.sh "a music note" --model gemini --aspect
 ${CLAUDE_PLUGIN_ROOT}/scripts/generate.sh "watercolor sunset" --raw
 ```
 
-Output is saved to `${CLAUDE_PLUGIN_ROOT}/generated/`.
+Output is saved to `~/.claude/plugins/mobile-app-icon/generated/`.
