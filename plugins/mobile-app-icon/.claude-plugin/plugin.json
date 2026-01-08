@@ -1,0 +1,9 @@
+{
+  "name": "mobile-app-icon",
+  "version": "1.0.0",
+  "description": "Generate mobile app icons using OpenAI or Gemini image generation APIs",
+  "author": {
+    "name": "rohi"
+  },
+  "keywords": ["ios", "android", "icon", "image-generation", "openai", "gemini"]
+}
