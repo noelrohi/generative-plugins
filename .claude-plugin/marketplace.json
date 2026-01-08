@@ -13,7 +13,8 @@
       "description": "Generate mobile app icons using OpenAI or Gemini image generation APIs",
       "version": "1.0.0",
       "author": {
-        "name": "rohi"
+        "name": "noelrohi",
+        "email": "noelrohi@users.noreply.github.com"
       },
       "source": "./plugins/mobile-app-icon",
       "category": "design"
