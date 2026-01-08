@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "generative-plugins",
+  "version": "1.0.0",
+  "description": "A marketplace of AI-powered generative plugins for Claude Code",
+  "owner": {
+    "name": "noelrohi",
+    "email": "noelrohi@users.noreply.github.com"
+  },
+  "plugins": [
+    {
+      "name": "mobile-app-icon",
+      "description": "Generate mobile app icons using OpenAI or Gemini image generation APIs",
+      "version": "1.0.0",
+      "author": {
+        "name": "rohi"
+      },
+      "source": "./plugins/mobile-app-icon",
+      "category": "design"
+    }
+  ]
+}
